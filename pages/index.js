@@ -7,11 +7,11 @@ export default function Home() {
         <title>Create Next App</title>
       </Head>
 
-      <div className='py-0 px-8'>
-        <main className='min-h-[100vh] py-16 px-0 flex flex-1 flex-col justify-center items-center'>
-          <h1 className='m-0 leading-[1.15] text-[4rem] hover:underline focus:underline active:underline text-center font-semibold'>
+      <div className='flex flex-col items-center justify-center min-h-screen py-2'>
+        <main className='flex flex-col items-center justify-center w-full flex-1 px-20 text-center'>
+          <h1 className='text-6xl font-bold'>
             Welcome to{' '}
-            <a className='text-[#0070f3]' href='https://nextjs.org'>
+            <a className='text-blue-600' href='https://nextjs.org'>
               Next.js!
             </a>
           </h1>
