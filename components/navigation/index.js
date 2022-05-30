@@ -7,7 +7,7 @@ const list = [
 ]
 
 const Navigation = () => (
-  <nav>
+  <nav className='bg-gray-400 py-4'>
     <ul className='flex justify-around'>
       {list.map((list) => (
         <NavList key={list.children}>
