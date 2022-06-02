@@ -6,7 +6,8 @@ export default function Home({ blogPosts }) {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Next.JS crash course</title>
+        <meta name='description' content='This is a next.js crash course' />
       </Head>
 
       <h1>Blog Page</h1>
