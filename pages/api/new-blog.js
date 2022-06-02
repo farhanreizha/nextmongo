@@ -1,23 +1,23 @@
 import { MongoClient } from 'mongodb'
 
-function handler(req, res) {
-  // req.method, req.body
-  if (req.method !== 'POSTS') return
+export default async function handler(req, res) {
+  // req.method req.body
+  if (req.method !== 'POST') return
 
   const { image, title, description, details } = req.body
   const slug = title.toLowerCase()
 
   if (!image || !title || !description || !details) return
 
-  const client = MongoClient.connect(
-    'mongodb+srv://farhan:ctmdu3PvMD9AgpMX@cluster0.afhc6.mongodb.net/nextmongo?retryWrites=true&w=majority'
+  const client = await MongoClient.connect(
+    'mongodb+srv://farhan:keUwt3vuBbnElt8o@cluster0.afhc6.mongodb.net/nextmongo?retryWrites=true&w=majority'
   )
 
   const db = client.db()
 
   const postCollection = db.collection('posts')
 
-  const result = postCollection.insertOne({ image, title, description, details })
+  const result = await postCollection.insertOne({ image, title, description, details, slug })
 
   client.close()
 
@@ -26,5 +26,3 @@ function handler(req, res) {
     message: 'Post Created',
   })
 }
-
-export default handler

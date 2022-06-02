@@ -1,5 +1,5 @@
 import Input from './Input'
-import { useRef, createRef } from 'react'
+import { useRef } from 'react'
 
 const BlogForm = ({ addBlogHandler }) => {
   // title, image, description, details
@@ -23,10 +23,10 @@ const BlogForm = ({ addBlogHandler }) => {
   return (
     <form className='max-w-lg w-full mx-auto' onSubmit={formSubmit}>
       <div className='flex flex-wrap -mx-3 mb-6 my-8'>
-        <Input name='Title' type='text' refs={titleRef} />
-        <Input name='Image' type='text' refs={imageRef} />
-        <Input name='Description' type='text' refs={descriptionRef} />
-        <Input name='Details' type='text' refs={detailRef} />
+        <Input name='title' type='text' refs={titleRef} />
+        <Input name='image' type='text' refs={imageRef} />
+        <Input name='description' type='text' refs={descriptionRef} />
+        <Input name='details' type='text' refs={detailRef} />
       </div>
       <button
         type='submit'
