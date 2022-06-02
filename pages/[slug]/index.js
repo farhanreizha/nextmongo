@@ -1,12 +1,14 @@
-import { useRouter } from 'next/router'
 import { MongoClient } from 'mongodb'
+import BlogItems from '@components/blogitems'
 
-export default function BlogDetail(props) {
-  const router = useRouter()
-
-  console.log(props)
-
-  return <h1>The Blog Detail Page</h1>
+export default function BlogDetail({ blog: { title, description, image, details } }) {
+  return (
+    <>
+      <div className='flex flex-col'>
+        <BlogItems title={title} description={description} image={image} details={details} />
+      </div>
+    </>
+  )
 }
 
 export async function getStaticPaths() {
@@ -43,10 +45,12 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      title: blogPosts.title,
-      description: blogPosts.description,
-      details: blogPosts.details,
-      image: blogPosts.image,
+      blog: {
+        title: blogPosts.title,
+        description: blogPosts.description,
+        details: blogPosts.details,
+        image: blogPosts.image,
+      },
     },
   }
 }
