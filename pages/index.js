@@ -10,7 +10,6 @@ export default function Home({ blogPosts }) {
         <meta name='description' content='This is a next.js crash course' />
       </Head>
 
-      <h1>Blog Page</h1>
       <div className='flex flex-col justify-center'>
         {blogPosts.map((item) => (
           <div key={item.id} className='m-2'>
