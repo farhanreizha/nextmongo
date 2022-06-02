@@ -1,6 +1,8 @@
 import BlogForm from '@components/blogform'
+import { useRouter } from 'next/router'
 
 export default function AddBlog() {
+  const router = useRouter()
   // Send request to the backend to add a new blog
   const addBlogHandler = async (data) => {
     const response = await fetch('api/new-blog', {
@@ -11,7 +13,7 @@ export default function AddBlog() {
 
     const resData = await response.json()
 
-    console.log(resData)
+    router.push('/')
   }
 
   return (

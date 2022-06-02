@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') return
 
   const { image, title, description, details } = req.body
-  const slug = title.toLowerCase()
+  const slug = title.replace(' ', '-').toLowerCase()
 
   if (!image || !title || !description || !details) return
 
