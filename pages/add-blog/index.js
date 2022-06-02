@@ -16,10 +16,5 @@ export default function AddBlog() {
     router.push('/')
   }
 
-  return (
-    <>
-      <div>Add Blog</div>
-      <BlogForm addBlogHandler={addBlogHandler} />
-    </>
-  )
+  return <BlogForm addBlogHandler={addBlogHandler} />
 }
